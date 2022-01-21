@@ -1,5 +1,9 @@
 # weather-forecast
 
+Please note, free version of OpenWeather API do not give access to the daily API (only paid), I'm using one-call api incobination with weather api to overcome the limitaiton.
+
+Working Demo: https://d1y5vtkcw7xix1.cloudfront.net/
+
 ## Project setup
 ```
 npm install
