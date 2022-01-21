@@ -1,0 +1,25 @@
+service:
+  name: weather-forecast
+
+plugins:
+  - serverless-hooks-plugin
+  - serverless-s3-sync
+  - serverless-cloudfront-invalidate
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  region: us-east-1
+  profile: GranthaAdmin
+
+custom:
+  cloudfrontInvalidate:
+    distributionId: E3QDJOKQE5A2P
+    items: # one or more paths required
+      - "/*"
+  hooks:
+    before:package:createDeploymentArtifacts:
+      - npm run build
+  s3Sync:
+    - bucketName: weather-forecast-demo
+      localDir: dist
