@@ -324,7 +324,7 @@ export function secondsToTime(value: number, showSign = true): string {
   if (showSign) {
     return `${sign}${hours}:${minutes}`;
   } else {
-    return `${hours}:${minutes}`;
+    return `${hours}&nbsp;h&nbsp;${minutes}&nbsp;min`;
   }
 }
 

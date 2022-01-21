@@ -41,12 +41,8 @@
           </div>
           <div>
             <div class="day-n-night">
-              <div class="info">
-                Day Length: <b>{{ dayLength }}</b>
-              </div>
-              <div class="info">
-                Night Length: <b>{{ nightLength }}</b>
-              </div>
+              <div class="info">Day Length: <b v-html="dayLength"></b></div>
+              <div class="info">Night Length: <b v-html="nightLength"></b></div>
             </div>
           </div>
         </div>
@@ -75,7 +71,7 @@ import {
     secondsToTime,
   },
 })
-export default class Spinner extends Vue {
+export default class Sunrise extends Vue {
   @Prop() private sunrise!: number;
   @Prop() private sunset!: number;
   @Prop() private timezone!: number;
@@ -144,8 +140,28 @@ export default class Spinner extends Vue {
   width: 100px;
   height: 100px;
   margin: 0 auto;
+  -webkit-animation: spin 10s linear infinite;
+  -moz-animation: spin 10s linear infinite;
+  animation: spin 10s linear infinite;
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 .dialog-box {
+  cursor: default;
   display: flex;
   justify-content: center;
   padding: 20px;
@@ -181,11 +197,23 @@ export default class Spinner extends Vue {
     padding: 5px;
   }
 }
+.dialog-footer {
+  margin-top: 10px;
+  i {
+    font-size: 1rem;
+    line-height: 1.4rem;
+    font-style: italic;
+    color: #999;
+  }
+}
 .day-n-night .info {
-  font-size: 0.9rem;
-  color: #999;
+  font-size: 1rem;
+  color: #666;
   margin-bottom: 0.5rem;
   padding: 0 0.5rem;
+  b {
+    font-weight: bold;
+  }
 }
 .rise-n-set,
 .day-n-night {
