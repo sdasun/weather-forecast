@@ -1,6 +1,6 @@
 # weather-forecast
 
-Please note, free version of OpenWeather API do not give access to the daily API (only paid), I'm using one-call api incobination with weather api to overcome the limitaiton.
+Please note, the free version of OpenWeather API does not give access to the daily API (only paid), I'm using one-call api combination with weather api to overcome the limitation.
 
 Working Demo: https://d1y5vtkcw7xix1.cloudfront.net/
 
