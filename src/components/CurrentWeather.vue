@@ -9,7 +9,7 @@
       <div class="icon">
         <img
           :src="
-            'http://openweathermap.org/img/w/' +
+            'https://openweathermap.org/img/w/' +
             results.weather[0].icon +
             '.png'
           "
