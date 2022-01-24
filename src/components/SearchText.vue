@@ -5,7 +5,6 @@
         type="text"
         placeholder="Enter a city. Example: London, UK"
         alt="Here you enter a city to get weather and forcast. Example: London, UK"
-        @input="onChange"
         v-model="search"
         @keydown.down="onArrowDown"
         @keydown.up="onArrowUp"
